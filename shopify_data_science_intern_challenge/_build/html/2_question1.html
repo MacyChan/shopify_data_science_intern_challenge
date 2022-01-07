@@ -211,6 +211,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#think-about-what-could-be-going-wrong-with-our-calculation-think-about-a-better-way-to-evaluate-this-data">
+   Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-metric-would-you-report-for-this-dataset">
+   What metric would you report for this dataset?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-its-value">
+   What is its value?
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -231,7 +254,8 @@
 </div>
 </div>
 </div>
-<p><em>a. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.</em></p>
+<div class="section" id="think-about-what-could-be-going-wrong-with-our-calculation-think-about-a-better-way-to-evaluate-this-data">
+<h2>Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.<a class="headerlink" href="#think-about-what-could-be-going-wrong-with-our-calculation-think-about-a-better-way-to-evaluate-this-data" title="Permalink to this headline">¶</a></h2>
 <p>Assume the data is in USD, the amount of AOV does not make sense, given</p>
 <ol class="simple">
 <li><p>The sold sneakers are affordable items (i.e. says USD100).</p></li>
@@ -343,12 +367,12 @@ As mean is estimator that very sensitive to outliers, my first suspicion is ther
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-da68895416b743cd9df53f28dfcf0f33"></div>
+<div id="altair-viz-a2a221a00268459b948a4fd3fca46225"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-da68895416b743cd9df53f28dfcf0f33") {
-      outputDiv = document.getElementById("altair-viz-da68895416b743cd9df53f28dfcf0f33");
+    if (outputDiv.id !== "altair-viz-a2a221a00268459b948a4fd3fca46225") {
+      outputDiv = document.getElementById("altair-viz-a2a221a00268459b948a4fd3fca46225");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -394,9 +418,13 @@ As mean is estimator that very sensitive to outliers, my first suspicion is ther
 </script></div></div>
 </div>
 <p>Form the graph above, most of the orders are between 1-3 items. However, there are 17 records with bulk purchase of 2000 pairs of shoes (USD704,000), it leads to the high shift of AOV.</p>
-<p><em>b. What metric would you report for this dataset?</em></p>
+</div>
+<div class="section" id="what-metric-would-you-report-for-this-dataset">
+<h2>What metric would you report for this dataset?<a class="headerlink" href="#what-metric-would-you-report-for-this-dataset" title="Permalink to this headline">¶</a></h2>
 <p>Because of the outliners, we can use <code class="docutils literal notranslate"><span class="pre">median</span></code>, which is less sensitive to outliers.</p>
-<p><em>c. What is its value?</em></p>
+</div>
+<div class="section" id="what-is-its-value">
+<h2>What is its value?<a class="headerlink" href="#what-is-its-value" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The median of order value is USD</span><span class="si">{</span> <span class="n">orders</span><span class="p">[</span><span class="s2">&quot;order_amount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -455,12 +483,12 @@ As mean is estimator that very sensitive to outliers, my first suspicion is ther
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-5ff538f9118549db92d0ef9deb41d9a2"></div>
+<div id="altair-viz-3217042cfb254d1d83d63975463d4177"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5ff538f9118549db92d0ef9deb41d9a2") {
-      outputDiv = document.getElementById("altair-viz-5ff538f9118549db92d0ef9deb41d9a2");
+    if (outputDiv.id !== "altair-viz-3217042cfb254d1d83d63975463d4177") {
+      outputDiv = document.getElementById("altair-viz-3217042cfb254d1d83d63975463d4177");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -522,6 +550,7 @@ The median price per pair of sneakers is USD153.0
 </div>
 </div>
 <p>It matched our result in part c.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

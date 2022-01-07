@@ -3,8 +3,7 @@
 
 # # Question 2
 
-# ## Question 2:
-# a. How many orders were shipped by Speedy Express in total?  
+# ## How many orders were shipped by Speedy Express in total?  
 
 # Answer in single query is:
 SELECT count(o.ShipperID) FROM Shippers s
@@ -15,7 +14,7 @@ WHERE ShipperName = 'Speedy Express'
 # However, in reality, depends on the application, we don't need to join the table.  
 # We can find the shipperID of `Speedy Express`, then count the Shipper table to enhance performance, if shipperID is not indexed.
 SELECT * FROM Shippers WHERE ShipperName = 'Speedy Express' # ShipperID = 1SELECT count(ShipperID) FROM Orders WHERE ShipperID = 1
-# b. What is the last name of the employee with the most orders? 
+# ## What is the last name of the employee with the most orders? 
 
 # Answer in single query is:
 SELECT e.LastName, MAX(Count) 
@@ -33,7 +32,7 @@ FROM [Orders]
 GROUP BY EmployeeID
 ORDER BY Count DESC
 LIMIT 5SELECT LastName FROM Employees WHERE EmployeeID = 4
-# c. What product was ordered the most by customers in Germany? 
+# ## What product was ordered the most by customers in Germany? 
 
 # Answer in single query is:
 SELECT p.ProductID, p.ProductName, SUM(Quantity) "Total_Qty" FROM [Customers] c

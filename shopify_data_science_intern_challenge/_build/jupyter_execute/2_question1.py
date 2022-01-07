@@ -14,7 +14,7 @@ import altair as alt
 import pandas as pd
 
 
-# *a. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.*  
+# ## Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.  
 # 
 # Assume the data is in USD, the amount of AOV does not make sense, given  
 # 1. The sold sneakers are affordable items (i.e. says USD100).
@@ -46,11 +46,11 @@ alt.Chart(orders).mark_bar().encode(
 
 # Form the graph above, most of the orders are between 1-3 items. However, there are 17 records with bulk purchase of 2000 pairs of shoes (USD704,000), it leads to the high shift of AOV. 
 
-# *b. What metric would you report for this dataset?*
+# ## What metric would you report for this dataset?
 # 
 # Because of the outliners, we can use `median`, which is less sensitive to outliers.
 
-# *c. What is its value?*
+# ## What is its value?
 
 # In[4]:
 
