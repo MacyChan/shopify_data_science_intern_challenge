@@ -217,8 +217,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Question 2:
+  <a class="reference internal nav-link" href="#how-many-orders-were-shipped-by-speedy-express-in-total">
+   How many orders were shipped by Speedy Express in total?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-last-name-of-the-employee-with-the-most-orders">
+   What is the last name of the employee with the most orders?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-product-was-ordered-the-most-by-customers-in-germany">
+   What product was ordered the most by customers in Germany?
   </a>
  </li>
 </ul>
@@ -234,19 +244,22 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="question-2">
 <h1>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
-<h2>Question 2:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>a. How many orders were shipped by Speedy Express in total?</p>
+<div class="section" id="how-many-orders-were-shipped-by-speedy-express-in-total">
+<h2>How many orders were shipped by Speedy Express in total?<a class="headerlink" href="#how-many-orders-were-shipped-by-speedy-express-in-total" title="Permalink to this headline">¶</a></h2>
 <p>Answer in single query is:</p>
 <p>The answer is : <strong>54</strong></p>
 <p>However, in reality, depends on the application, we don’t need to join the table.<br />
 We can find the shipperID of <code class="docutils literal notranslate"><span class="pre">Speedy</span> <span class="pre">Express</span></code>, then count the Shipper table to enhance performance, if shipperID is not indexed.</p>
-<p>b. What is the last name of the employee with the most orders?</p>
+</div>
+<div class="section" id="what-is-the-last-name-of-the-employee-with-the-most-orders">
+<h2>What is the last name of the employee with the most orders?<a class="headerlink" href="#what-is-the-last-name-of-the-employee-with-the-most-orders" title="Permalink to this headline">¶</a></h2>
 <p>Answer in single query is:</p>
 <p>The answer is : <strong>Peacock</strong><br />
 ** The reason of NOT using LIMIT 1 is because there maybe more that one employee has the small amount of maximum orders.</p>
 <p>Similar to part(a), if single query is not necessary, I will query the top five to make sure the employee of maximum order is unique, then query the employee name.</p>
-<p>c. What product was ordered the most by customers in Germany?</p>
+</div>
+<div class="section" id="what-product-was-ordered-the-most-by-customers-in-germany">
+<h2>What product was ordered the most by customers in Germany?<a class="headerlink" href="#what-product-was-ordered-the-most-by-customers-in-germany" title="Permalink to this headline">¶</a></h2>
 <p>Answer in single query is:</p>
 <p>The answer is : <strong>Boston Crab Meat</strong><br />
 ** This is another approach for Top 1 category, simply draw out more than one values to make sure there is no duplicated top values.</p>

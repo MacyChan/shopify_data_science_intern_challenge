@@ -217,13 +217,47 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-1">
-   Question 1:
+   Question 1
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#think-about-what-could-be-going-wrong-with-our-calculation-think-about-a-better-way-to-evaluate-this-data">
+     Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-metric-would-you-report-for-this-dataset">
+     What metric would you report for this dataset?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-its-value">
+     What is its value?
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-2">
-   Question 2:
+   Question 2
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-many-orders-were-shipped-by-speedy-express-in-total">
+     How many orders were shipped by Speedy Express in total?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-last-name-of-the-employee-with-the-most-orders">
+     What is the last name of the employee with the most orders?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-product-was-ordered-the-most-by-customers-in-germany">
+     What product was ordered the most by customers in Germany?
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -247,18 +281,23 @@
 </div>
 </div>
 <div class="section" id="question-1">
-<h2>Question 1:<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
-<p><em>a. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.</em></p>
-<p><strong>Assume the data is in USD, the amount of AOV does not make sense, given</strong></p>
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="think-about-what-could-be-going-wrong-with-our-calculation-think-about-a-better-way-to-evaluate-this-data">
+<h3>Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.<a class="headerlink" href="#think-about-what-could-be-going-wrong-with-our-calculation-think-about-a-better-way-to-evaluate-this-data" title="Permalink to this headline">¶</a></h3>
+<p>Assume the data is in USD, the amount of AOV does not make sense, given</p>
 <ol class="simple">
-<li><p><strong>The sold sneakers are affordable items (i.e. says USD100).</strong></p></li>
-<li><p><strong>Each shops sells one model</strong>
-<strong>This indicated customers are making bulk purchases of 30 pairs of identical shoes per order in average.</strong><br />
-<strong>Shopify is well known among B2C eCommerce. Therefore this result is unlikely to happen.</strong></p></li>
+<li><p>The sold sneakers are affordable items (i.e. says USD100).</p></li>
+<li><p>Each shops sells one model
+This indicated customers are making bulk purchases of 30 pairs of identical shoes per order in average.<br />
+Shopify is well known among B2C eCommerce. Therefore this result is unlikely to happen.</p></li>
 </ol>
-<p><em>b. What metric would you report for this dataset?</em></p>
-<p><strong>Because of the outliners, we can use <code class="docutils literal notranslate"><span class="pre">median</span></code>, which is less sensitive to outliers.</strong></p>
-<p><em>c. What is its value?</em></p>
+</div>
+<div class="section" id="what-metric-would-you-report-for-this-dataset">
+<h3>What metric would you report for this dataset?<a class="headerlink" href="#what-metric-would-you-report-for-this-dataset" title="Permalink to this headline">¶</a></h3>
+<p>Because of the outliners, we can use <code class="docutils literal notranslate"><span class="pre">median</span></code>, which is less sensitive to outliers.</p>
+</div>
+<div class="section" id="what-is-its-value">
+<h3>What is its value?<a class="headerlink" href="#what-is-its-value" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The median of order value is USD</span><span class="si">{</span> <span class="n">orders</span><span class="p">[</span><span class="s2">&quot;order_amount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -272,16 +311,23 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="question-2">
-<h2>Question 2:<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
-<p>a. How many orders were shipped by Speedy Express in total?</p>
+<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-many-orders-were-shipped-by-speedy-express-in-total">
+<h3>How many orders were shipped by Speedy Express in total?<a class="headerlink" href="#how-many-orders-were-shipped-by-speedy-express-in-total" title="Permalink to this headline">¶</a></h3>
 <p>The answer is : <strong>54</strong></p>
-<p>b. What is the last name of the employee with the most orders?</p>
+</div>
+<div class="section" id="what-is-the-last-name-of-the-employee-with-the-most-orders">
+<h3>What is the last name of the employee with the most orders?<a class="headerlink" href="#what-is-the-last-name-of-the-employee-with-the-most-orders" title="Permalink to this headline">¶</a></h3>
 <p>The answer is : <strong>Peacock</strong><br />
 ** The reason of NOT using LIMIT 1 is because there maybe more that one employee has the small amount of maximum orders.</p>
-<p>c. What product was ordered the most by customers in Germany?</p>
+</div>
+<div class="section" id="what-product-was-ordered-the-most-by-customers-in-germany">
+<h3>What product was ordered the most by customers in Germany?<a class="headerlink" href="#what-product-was-ordered-the-most-by-customers-in-germany" title="Permalink to this headline">¶</a></h3>
 <p>The answer is : <strong>Boston Crab Meat</strong><br />
 ** This is another approach for Top 1 category, simply draw out more than one values to make sure there is no duplicated top values.</p>
+</div>
 </div>
 </div>
 
