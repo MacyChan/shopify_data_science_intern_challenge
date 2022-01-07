@@ -1,0 +1,133 @@
+Traceback (most recent call last):
+  File "/opt/miniconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/miniconda3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import altair as alt
+import pandas as pd
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+[0;32m/var/folders/zn/40lvk7q11ddb7fryhn5vq7x80000gn/T/ipykernel_32207/2651899084.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mimport[0m [0maltair[0m [0;32mas[0m [0malt[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/altair/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0m__version__[0m [0;34m=[0m [0;34m"4.1.0"[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[0;32m----> 4[0;31m [0;32mfrom[0m [0;34m.[0m[0mvegalite[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0mexamples[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/altair/vegalite/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# flake8: noqa[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0;32mfrom[0m [0;34m.[0m[0mv4[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/altair/vegalite/v4/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# flake8: noqa[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0;32mfrom[0m [0;34m.[0m[0mschema[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;32mfrom[0m [0;34m.[0m[0mapi[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[1;32m      5[0m [0;32mfrom[0m [0;34m...[0m[0mdatasets[0m [0;32mimport[0m [0mlist_datasets[0m[0;34m,[0m [0mload_dataset[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/altair/vegalite/v4/schema/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# flake8: noqa[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0;32mfrom[0m [0;34m.[0m[0mcore[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;32mfrom[0m [0;34m.[0m[0mchannels[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mSCHEMA_VERSION[0m [0;34m=[0m [0;34m'v4.8.1'[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mSCHEMA_URL[0m [0;34m=[0m [0;34m'https://vega.github.io/schema/vega-lite/v4.8.1.json'[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/altair/vegalite/v4/schema/core.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0;31m# tools/generate_schema_wrapper.py. Do not modify directly.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[0;32m----> 4[0;31m [0;32mfrom[0m [0maltair[0m[0;34m.[0m[0mutils[0m[0;34m.[0m[0mschemapi[0m [0;32mimport[0m [0mSchemaBase[0m[0;34m,[0m [0mUndefined[0m[0;34m,[0m [0m_subclasses[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0;34m[0m[0m
+[1;32m      6[0m [0;32mimport[0m [0mpkgutil[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/altair/utils/__init__.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m from .core import (
+[0m[1;32m      2[0m     [0minfer_vegalite_type[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m     [0minfer_encoding_types[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m     [0msanitize_dataframe[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m     [0mparse_shorthand[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/altair/utils/core.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     12[0m [0;34m[0m[0m
+[1;32m     13[0m [0;32mimport[0m [0mjsonschema[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 14[0;31m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     15[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     16[0m [0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/pandas/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     14[0m [0;34m[0m[0m
+[1;32m     15[0m [0;32mif[0m [0mmissing_dependencies[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 16[0;31m     raise ImportError(
+[0m[1;32m     17[0m         [0;34m"Unable to import required dependencies:\n"[0m [0;34m+[0m [0;34m"\n"[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mmissing_dependencies[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     18[0m     )
+
+[0;31mImportError[0m: Unable to import required dependencies:
+numpy: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.9 from "/opt/miniconda3/bin/python"
+  * The NumPy version is: "1.21.2"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: dlopen(/opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so, 2): Library not loaded: @rpath/libopenblas.dylib
+  Referenced from: /opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so
+  Reason: image not found
+
+ImportError: Unable to import required dependencies:
+numpy: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.9 from "/opt/miniconda3/bin/python"
+  * The NumPy version is: "1.21.2"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: dlopen(/opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so, 2): Library not loaded: @rpath/libopenblas.dylib
+  Referenced from: /opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so
+  Reason: image not found
+
+
