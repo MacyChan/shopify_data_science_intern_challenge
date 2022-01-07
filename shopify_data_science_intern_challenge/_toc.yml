@@ -1,0 +1,9 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 1_intro
+chapters:
+- file: 2_question1
+- file: 3_question2
+- file: 4_summary

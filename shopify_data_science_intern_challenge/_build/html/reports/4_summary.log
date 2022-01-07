@@ -1,0 +1,132 @@
+Traceback (most recent call last):
+  File "/opt/miniconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/miniconda3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/miniconda3/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from matplotlib import rcParams, cycler
+import matplotlib.pyplot as plt
+import numpy as np
+plt.ion()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/numpy/core/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     21[0m [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 22[0;31m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0mmultiarray[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     23[0m [0;32mexcept[0m [0mImportError[0m [0;32mas[0m [0mexc[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/numpy/core/multiarray.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     11[0m [0;34m[0m[0m
+[0;32m---> 12[0;31m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0moverrides[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     13[0m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m_multiarray_umath[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/numpy/core/overrides.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      6[0m [0;34m[0m[0m
+[0;32m----> 7[0;31m from numpy.core._multiarray_umath import (
+[0m[1;32m      8[0m     add_docstring, implement_array_function, _get_implementing_args)
+
+[0;31mImportError[0m: dlopen(/opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so, 2): Library not loaded: @rpath/libopenblas.dylib
+  Referenced from: /opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so
+  Reason: image not found
+
+During handling of the above exception, another exception occurred:
+
+[0;31mImportError[0m                               Traceback (most recent call last)
+[0;32m/var/folders/zn/40lvk7q11ddb7fryhn5vq7x80000gn/T/ipykernel_26754/2191868119.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mfrom[0m [0mmatplotlib[0m [0;32mimport[0m [0mrcParams[0m[0;34m,[0m [0mcycler[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;32mimport[0m [0mmatplotlib[0m[0;34m.[0m[0mpyplot[0m [0;32mas[0m [0mplt[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mplt[0m[0;34m.[0m[0mion[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/matplotlib/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m    105[0m [0;31m# cbook must import matplotlib only within function[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    106[0m [0;31m# definitions, so it is safe to import from it here.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 107[0;31m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m_api[0m[0;34m,[0m [0mcbook[0m[0;34m,[0m [0mdocstring[0m[0;34m,[0m [0mrcsetup[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    108[0m [0;32mfrom[0m [0mmatplotlib[0m[0;34m.[0m[0mcbook[0m [0;32mimport[0m [0mMatplotlibDeprecationWarning[0m[0;34m,[0m [0msanitize_sequence[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    109[0m [0;32mfrom[0m [0mmatplotlib[0m[0;34m.[0m[0mcbook[0m [0;32mimport[0m [0mmplDeprecation[0m  [0;31m# deprecated[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/matplotlib/cbook/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     26[0m [0;32mimport[0m [0mweakref[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     27[0m [0;34m[0m[0m
+[0;32m---> 28[0;31m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     29[0m [0;34m[0m[0m
+[1;32m     30[0m [0;32mimport[0m [0mmatplotlib[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/numpy/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m    148[0m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m_distributor_init[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    149[0m [0;34m[0m[0m
+[0;32m--> 150[0;31m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0mcore[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    151[0m     [0;32mfrom[0m [0;34m.[0m[0mcore[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    152[0m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0mcompat[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/lib/python3.9/site-packages/numpy/core/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     46[0m """ % (sys.version_info[0], sys.version_info[1], sys.executable,
+[1;32m     47[0m         __version__, exc)
+[0;32m---> 48[0;31m     [0;32mraise[0m [0mImportError[0m[0;34m([0m[0mmsg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     49[0m [0;32mfinally[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     50[0m     [0;32mfor[0m [0menvkey[0m [0;32min[0m [0menv_added[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mImportError[0m: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.9 from "/opt/miniconda3/bin/python"
+  * The NumPy version is: "1.21.2"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: dlopen(/opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so, 2): Library not loaded: @rpath/libopenblas.dylib
+  Referenced from: /opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so
+  Reason: image not found
+
+ImportError: 
+
+IMPORTANT: PLEASE READ THIS FOR ADVICE ON HOW TO SOLVE THIS ISSUE!
+
+Importing the numpy C-extensions failed. This error can happen for
+many reasons, often due to issues with your setup or how NumPy was
+installed.
+
+We have compiled some common reasons and troubleshooting tips at:
+
+    https://numpy.org/devdocs/user/troubleshooting-importerror.html
+
+Please note and check the following:
+
+  * The Python version is: Python3.9 from "/opt/miniconda3/bin/python"
+  * The NumPy version is: "1.21.2"
+
+and make sure that they are the versions you expect.
+Please carefully study the documentation linked above for further help.
+
+Original error was: dlopen(/opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so, 2): Library not loaded: @rpath/libopenblas.dylib
+  Referenced from: /opt/miniconda3/lib/python3.9/site-packages/numpy/core/_multiarray_umath.cpython-39-darwin.so
+  Reason: image not found
+
+
