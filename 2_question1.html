@@ -41,7 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -158,7 +158,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -206,7 +206,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -236,40 +236,7 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Question 1</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#think-about-what-could-be-going-wrong-with-our-calculation-think-about-a-better-way-to-evaluate-this-data">
-   Think about what could be going wrong with our calculation. Think about a better way to evaluate this data.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-metric-would-you-report-for-this-dataset">
-   What metric would you report for this dataset?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-its-value">
-   What is its value?
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="question-1">
@@ -403,13 +370,13 @@ As mean is estimator that very sensitive to outliers, my first suspicion is ther
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c92ee7cd6c10417ab20518f946a5e0b5"></div>
+<div id="altair-viz-fccc9638f66149db9b581e24f6f7f1bd"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c92ee7cd6c10417ab20518f946a5e0b5") {
-      outputDiv = document.getElementById("altair-viz-c92ee7cd6c10417ab20518f946a5e0b5");
+    if (outputDiv.id !== "altair-viz-fccc9638f66149db9b581e24f6f7f1bd") {
+      outputDiv = document.getElementById("altair-viz-fccc9638f66149db9b581e24f6f7f1bd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -524,13 +491,13 @@ As mean is estimator that very sensitive to outliers, my first suspicion is ther
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d70ec62ffaa64d0aa21958e1b4a071e9"></div>
+<div id="altair-viz-4cf46fe5f26d403abb736738d7b03b32"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d70ec62ffaa64d0aa21958e1b4a071e9") {
-      outputDiv = document.getElementById("altair-viz-d70ec62ffaa64d0aa21958e1b4a071e9");
+    if (outputDiv.id !== "altair-viz-4cf46fe5f26d403abb736738d7b03b32") {
+      outputDiv = document.getElementById("altair-viz-4cf46fe5f26d403abb736738d7b03b32");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -608,21 +575,21 @@ The median price per pair of sneakers is USD153.0
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-env-spotify_user_behaviour_predictor-py"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "conda-env-spotify_user_behaviour_predictor-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-env-spotify_user_behaviour_predictor-py'</script>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="1_intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -639,17 +606,19 @@ The median price per pair of sneakers is USD153.0
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By Macy Chan<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Macy Chan<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
