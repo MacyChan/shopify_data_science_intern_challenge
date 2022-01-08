@@ -287,10 +287,10 @@
 <p>Assume the data is in USD, the amount of AOV does not make sense, given</p>
 <ol class="simple">
 <li><p>The sold sneakers are affordable items (i.e. says USD100).</p></li>
-<li><p>Each shops sells one model
-This indicated customers are making bulk purchases of 30 pairs of identical shoes per order in average.<br />
-Shopify is well known among B2C eCommerce. Therefore this result is unlikely to happen.</p></li>
+<li><p>Each shop sells one model</p></li>
 </ol>
+<p>This indicated customers are making bulk purchases of 30 pairs of identical shoes per order in average.</p>
+<p>Shopify is well known among B2C eCommerce. Therefore this result is unlikely to happen.</p>
 </div>
 <div class="section" id="what-metric-would-you-report-for-this-dataset">
 <h3>What metric would you report for this dataset?<a class="headerlink" href="#what-metric-would-you-report-for-this-dataset" title="Permalink to this headline">¶</a></h3>
@@ -316,15 +316,50 @@ Shopify is well known among B2C eCommerce. Therefore this result is unlikely to 
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-many-orders-were-shipped-by-speedy-express-in-total">
 <h3>How many orders were shipped by Speedy Express in total?<a class="headerlink" href="#how-many-orders-were-shipped-by-speedy-express-in-total" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">count</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">ShipperID</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">Shippers</span> <span class="n">s</span>
+<span class="n">JOIN</span> <span class="n">Orders</span> <span class="n">o</span> <span class="n">ON</span> <span class="n">s</span><span class="o">.</span><span class="n">ShipperID</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">ShipperID</span>
+<span class="n">WHERE</span> <span class="n">ShipperName</span> <span class="o">=</span> <span class="s1">&#39;Speedy Express&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>The answer is : <strong>54</strong></p>
 </div>
 <div class="section" id="what-is-the-last-name-of-the-employee-with-the-most-orders">
 <h3>What is the last name of the employee with the most orders?<a class="headerlink" href="#what-is-the-last-name-of-the-employee-with-the-most-orders" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">e</span><span class="o">.</span><span class="n">LastName</span><span class="p">,</span> <span class="n">MAX</span><span class="p">(</span><span class="n">Count</span><span class="p">)</span> 
+<span class="n">FROM</span> <span class="p">(</span>
+	<span class="n">SELECT</span> <span class="n">EmployeeID</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">EmployeeID</span><span class="p">)</span> <span class="s2">&quot;Count&quot;</span> 
+    <span class="n">FROM</span> <span class="p">[</span><span class="n">Orders</span><span class="p">]</span> 
+    <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">EmployeeID</span><span class="p">)</span> <span class="n">o</span>
+<span class="n">JOIN</span> <span class="n">Employees</span> <span class="n">e</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">EmployeeID</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">EmployeeID</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>The answer is : <strong>Peacock</strong><br />
 ** The reason of NOT using LIMIT 1 is because there maybe more that one employee has the small amount of maximum orders.</p>
 </div>
 <div class="section" id="what-product-was-ordered-the-most-by-customers-in-germany">
 <h3>What product was ordered the most by customers in Germany?<a class="headerlink" href="#what-product-was-ordered-the-most-by-customers-in-germany" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">p</span><span class="o">.</span><span class="n">ProductID</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">ProductName</span><span class="p">,</span> <span class="n">SUM</span><span class="p">(</span><span class="n">Quantity</span><span class="p">)</span> <span class="s2">&quot;Total_Qty&quot;</span> <span class="n">FROM</span> <span class="p">[</span><span class="n">Customers</span><span class="p">]</span> <span class="n">c</span>
+<span class="n">JOIN</span> <span class="n">Orders</span> <span class="n">o</span> <span class="n">ON</span> <span class="n">c</span><span class="o">.</span><span class="n">CustomerID</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">CustomerID</span>
+<span class="n">JOIN</span> <span class="n">OrderDetails</span> <span class="n">od</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">OrderID</span> <span class="o">=</span> <span class="n">od</span><span class="o">.</span><span class="n">OrderID</span>
+<span class="n">JOIN</span> <span class="n">Products</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">od</span><span class="o">.</span><span class="n">ProductID</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">ProductID</span>
+<span class="n">WHERE</span> <span class="n">c</span><span class="o">.</span><span class="n">Country</span> <span class="o">=</span> <span class="s1">&#39;Germany&#39;</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="n">p</span><span class="o">.</span><span class="n">ProductID</span>
+<span class="n">ORDER</span> <span class="n">BY</span> <span class="n">Total_Qty</span> <span class="n">DESC</span>
+<span class="n">LIMIT</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>The answer is : <strong>Boston Crab Meat</strong><br />
 ** This is another approach for Top 1 category, simply draw out more than one values to make sure there is no duplicated top values.</p>
 </div>

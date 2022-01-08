@@ -38,10 +38,16 @@ orders.head()
 
 
 alt.Chart(orders).mark_bar().encode(
-    alt.X("total_items", bin=alt.Bin(maxbins=30),title="Average number of sneakers per order (pair)"),
-    y='count()',
-    tooltip=['total_items','count()', 'order_amount']
-).properties(height=200, width=800, title="Distribution of average number of sneakers per order")
+    alt.X(
+        "total_items",
+        bin=alt.Bin(maxbins=30),
+        title="Average number of sneakers per order (pair)",
+    ),
+    y="count()",
+    tooltip=["total_items", "count()", "order_amount"],
+).properties(
+    height=200, width=800, title="Distribution of average number of sneakers per order"
+)
 
 
 # Form the graph above, most of the orders are between 1-3 items. However, there are 17 records with bulk purchase of 2000 pairs of shoes (USD704,000), it leads to the high shift of AOV. 
