@@ -60,7 +60,7 @@ say("This is a fun application!", "cat")
 During handling of the above exception, another exception occurred:
 
 [0;31mRInterpreterError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1918/532618193.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1909/532618193.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mget_ipython[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mrun_cell_magic[0m[0;34m([0m[0;34m'R'[0m[0;34m,[0m [0;34m''[0m[0;34m,[0m [0;34m'library("cowsay")\nsay("This is a fun application!", "cat")\n'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/IPython/core/interactiveshell.py[0m in [0;36mrun_cell_magic[0;34m(self, magic_name, line, cell)[0m
