@@ -32,7 +32,7 @@ jobs:
         conda install -c conda-forge rpy2 -y
       # pip install rpy2
       # conda install r-caret
-        conda install r-cowsay
+        conda install r-cowsay -y
         jupyter-book build shopify_data_science_intern_challenge
 
     # Deploy the book's HTML to gh-pages branch
