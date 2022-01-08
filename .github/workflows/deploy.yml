@@ -29,6 +29,7 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
+        pip install rpy2
         jupyter-book build shopify_data_science_intern_challenge
 
     # Deploy the book's HTML to gh-pages branch
